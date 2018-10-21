@@ -51,36 +51,49 @@ $ git push -u origin master
 --------------------------
 
 2、上传完成后，日后如果要修改，我们可以通过 
+
 $ git clone https://github.com/<your_username>/<your_repo_name>.git 
+
 下载到本地，然后进行修改README.md
 
 修改完成后，通过git status命令查看文件状态，会发现有提示
+
 Changes not staged for commit;
 
-是告诉我们下面的文件没有标记“staged”需要被提交。
-接下来我们执行：
+是告诉我们下面的文件没有标记“staged”需要被提交,接下来我们执行：
+
 $ git add filename 
+
 Git会将该文件标记为准备好提交状态:
+
 Changes staged for commit.
 
 在我们执行 git add 命令前，我们可以通过执行
+
 $ git diff 
+
 它会显示文件的变化内容
+
 diff --git a/README.md b/README.md 指定Git正在比较的内容，这里是比较README.md
+
 --- a/README.md 移除的内容
+
 +++ b/README.md 新增加的内容
 
 Changes to be committed 指定文件名列表
 
-如果你已经执行了git add命令，再去执行 git diff命令查看比较就不能显示变化了
-此时需要执行 
+如果你已经执行了git add命令，再去执行 git diff命令查看比较就不能显示变化了,此时需要执行 
+
 $  git diff --cached
 
 当我们修改完成后，将修改后的内容上传到github库
+
 首先向Git库提交并添加提交说明：
+
 $ git commit -m "Updated Readme comments"
 
 然后执行推送
+
 $ git push -u origin master 
 
 
