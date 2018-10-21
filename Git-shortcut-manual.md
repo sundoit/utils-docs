@@ -96,4 +96,50 @@ $ git commit -m "Updated Readme comments"
 
 $ git push -u origin master 
 
+---------------------------------------------------------
+
+3、添加新文件：
+
+大题的步骤是在本地创建新文件，add到Git，push到GitHub这样一个过程。
+
+$ echo "This is a new file" >> newFile.txt
+
+$ cat newFile.txt
+
+$ git status # 需要添加到Git的内容
+
+$ git add newFile.txt
+
+$ git status # 需要提交的内容
+
+$ git commit -m "Adding a new file" newFile.txt
+
+$ git push -u origin master 
+
+4、从Git删除一个文件
+
+大题流程是，首先在本地通过rm 删除目标文件
+
+$ rm delFile.txt
+
+执行 
+
+$ git status 
+
+会看到 该文件not staged for commit,并且它已经被从本地删除了,接下来，我们执行
+
+$ git add delFile.txt
+
+$ git status
+
+这里执行git add是为了告诉Git我们对delFile.txt的变化操作
+
+git add命令会在添加新文件，修改已有文件，以及删除文件后都执行，它会将目标文件的所有变化记录到Git
+
+此后执行的git status会显示有个文件已被删除需要提交，那么接下来我们就可以commit这次删除，并push它到远程github上。
+
+$ git commit -m "Delete fdelFile.txt"
+
+$ git push -u origin master
+
 
