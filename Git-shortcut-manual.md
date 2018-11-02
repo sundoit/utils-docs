@@ -143,3 +143,46 @@ $ git commit -m "Delete fdelFile.txt"
 $ git push -u origin master
 
 
+====================================================================
+
+远程仓库相关操作
+
+查看远程仓库：
+
+$ git remote -v 显示需要读写远程仓库信息
+
+下载远程仓库：
+
+$ git clone https://github.com/sundoit/utils-docs.git
+
+添加远程仓库：
+
+$ git remote add <shortName> https://github.com/sundoit/new-repo
+
+从远程仓库拉取内容：
+
+$ git fetch <shortName>
+
+想远程仓库推送内容：
+
+$ git push <shortName> <branchName>
+
+比如： $ git push origin master
+
+查看指定远程仓库：
+
+$ git remote show <shortName>
+
+比如： $ git remote show origin
+
+远程仓库重命名： A-->B
+
+$ git remote rename A B
+
+查看结果： $ git remote 
+
+删除远程仓库：
+
+$ git remote rm <shortName>
+
+
